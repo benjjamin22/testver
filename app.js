@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var fs= require ( 'fs') ;
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -28,7 +29,7 @@ app.use('/id', idslipuser);
 app.use('/schools', viewshools);
 app.use('/login', getbypine);
 
-//var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
+var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
 
 app.get('/:id', function (req, res,next) {
   try{
