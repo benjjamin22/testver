@@ -26,7 +26,7 @@ app.use('/users', usersRouter);
 app.use('/id', idslipuser);
 app.use('/schools', viewshools);
 
-var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
+//var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
 
 app.get('/:id', function (req, res,next) {
   try{
