@@ -30,12 +30,8 @@ app.use('/id', idslipuser);
 app.use('/schools', viewshools);
 app.use('/login', getbypine);
 
-<<<<<<< HEAD
-var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
-=======
 var accountan = path.join(process.cwd(),'./data.json')
 var accounts = JSON.parse(fs.readFileSync(accountan,'utf-8'));
->>>>>>> d2d25a42adc51524ddd51f2e229e7aad1da88c26
 
 app.get('/:id', function (req, res,next) {
   try{
