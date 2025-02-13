@@ -1,11 +1,13 @@
 var express = require('express');
 var fs = require ( 'fs') ;
+var path = require ( 'path') ;
 var router = express.Router();
 
-
+var accountan = path.join(process.cwd(),'./data.json')
+var accounts = JSON.parse(fs.readFileSync(accountan,'utf-8'));
 //var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
 
-router.get('/', function handler(req, res,next) {
+router.post('/', function handler(req, res,next) {
     try{
         var foundUser = accounts.find((data) => req.body.Password === data.pine || req.body.ParentPhoneNo === data.ParentPhoneNo);
         if (foundUser ) {
