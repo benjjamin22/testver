@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var idslipuser = require('./routes/idslip');
 var viewshools = require('./routes/school');
+var getbypine = require('./routes/login');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/id', idslipuser);
 app.use('/schools', viewshools);
+app.use('/login', getbypine);
 
 //var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
 
