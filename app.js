@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var fs = require('fs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -28,7 +29,8 @@ app.use('/id', idslipuser);
 app.use('/schools', viewshools);
 app.use('/login', getbypine);
 
-//var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
+var accountan = path.join(process.cwd(),'./data.json')
+var accounts = JSON.parse(fs.readFileSync(accountan,'utf-8'));
 
 app.get('/:id', function (req, res,next) {
   try{
