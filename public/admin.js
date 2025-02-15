@@ -105,11 +105,13 @@ async function getmovie() {
         const li = document.createElement('li')
         li.innerHTML = `
             <div class="user-profile">
-                <div class="profile-top">
-                    <img style="justify-self:center;" src="${user.client}">
+                <div style="justify-content:center; padding:5% 0% ;width:100%;justify-self:center;background-color:green;heigh:auto;" class="profile-top">
+                <div style="justify-content:center;padding:5% 18%; width:100%;justify-self:center;background-color:green;heigh:auto;">
+                    <img src="${user.client}">
+                    </div>
                     <div class="profile-info">
-                        <h2 style="text-align:center;margin-bottom:0px;line-height:2rem;color:black;">${user.Aname.Name} ${user.Aname.Mname} ${user.Aname.Surname}</h2>  
-                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;text-align:center;color:black;">>>>ID NO: ${user.pine}<<<</h1>
+                        <h2 style="text-align:center;margin-bottom:0px;line-height:2rem;color:white;">${user.Aname.Name} ${user.Aname.Mname} ${user.Aname.Surname}</h2>  
+                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;text-align:center;color:yellow;">>>>ID NO: ${user.pine}<<<</h1>
                     </div>
                 
                 </div>
@@ -153,7 +155,7 @@ async function getmovie() {
                                 <h1 style="margin:-5px;color:red;font-size:12px;">- ${user.HometownCommunity} -</h1>
                             </div> 
                             
-                           <ul style="margin-bottom:1rem;">
+                           <div style="margin-bottom:1rem;jusify-self:center">
                                  <div style="display:flex;margin:-9px 0px;;justify-content:center;">
                             <div>
                                 <h1 style="font-size:12px;margin:0px;text-align:center;">PARENT CONTACT 1:</h1>
@@ -176,7 +178,7 @@ async function getmovie() {
                                 </div>                           
                             </div>
                         </div>
-                            </ul>
+                            </div>
                     </div>
                        
                     </div>       
