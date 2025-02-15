@@ -11,6 +11,9 @@ var usersRouter = require('./routes/users');
 var idslipuser = require('./routes/idslip');
 var viewshools = require('./routes/school');
 var getbypine = require('./routes/login');
+var getttall = require('./routes/users');
+var all = require('./routes/all');
+var forms = require('./routes/form');
 
 var app = express();
 
@@ -29,6 +32,9 @@ app.use('/users', usersRouter);
 app.use('/id', idslipuser);
 app.use('/schools', viewshools);
 app.use('/login', getbypine);
+app.use('/form', all);
+app.use('/getall', getttall);
+app.use('/admin', forms);
 
 var accountan = path.join(process.cwd(),'./data.json')
 var accounts = JSON.parse(fs.readFileSync(accountan,'utf-8'));
