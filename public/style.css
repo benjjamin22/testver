@@ -276,6 +276,10 @@ margin-top: 20px;
   
 }
 
+.mainli div.hide {
+  display: none;
+}
+
 .flip {
   margin: -1;
   animation: flipdiv 2s infinite;

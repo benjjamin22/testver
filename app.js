@@ -4,17 +4,10 @@ var path = require('path');
 var fs= require ( 'fs') ;
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var fs = require('fs');
+//var session = require('express-session');
+//var { v4 : uuidv4 } = require('uuid');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var idslipuser = require('./routes/idslip');
-var viewshools = require('./routes/school');
-var getbypine = require('./routes/login');
-var getttall = require('./routes/users');
-var all = require('./routes/all');
-//var idform = require('./routes/idform');
-var forms = require('./routes/form');
+var route = require('./routes/router');
 
 var app = express();
 
@@ -28,41 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/id', idslipuser);
-app.use('/schools', viewshools);
-app.use('/login', getbypine);
-app.use('/form', all);
-app.use('/getall', getttall);
-app.use('/admin', forms);
-//app.use('/idforms', idform);
-
-var accountan = path.join(process.cwd(),'./data.json')
-var accounts = JSON.parse(fs.readFileSync(accountan,'utf-8'));
-
-app.get('/:id', function (req, res,next) {
-  try{
-      var id = req.params.id;
-      var foundUser = accounts.find((data) => id === data.id );
-      console.log(foundUser);
-      if (foundUser ) {
-          //req.session.user = foundUser.pine;
-              res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,
-                  NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,
-                  Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,
-                  State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,
-                  ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,
-                  Status:foundUser.Status,id:foundUser.id,Status:foundUser.Status,time:foundUser.time});
-          } else {
-              res.render('ddx');
-          }
-     
-  } catch{
-      res.send("Internal server error");
-      
-  }
-});
+app.use('/', route);
 
 
 // catch 404 and forward to error handler
