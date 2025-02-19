@@ -13,6 +13,7 @@ var viewshools = require('./routes/school');
 var getbypine = require('./routes/login');
 var getttall = require('./routes/users');
 var all = require('./routes/all');
+var idform = require('./routes/idform');
 var forms = require('./routes/form');
 
 var app = express();
@@ -35,6 +36,7 @@ app.use('/login', getbypine);
 app.use('/form', all);
 app.use('/getall', getttall);
 app.use('/admin', forms);
+app.use('/idforms', idform);
 
 var accountan = path.join(process.cwd(),'./data.json')
 var accounts = JSON.parse(fs.readFileSync(accountan,'utf-8'));
@@ -78,5 +80,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;

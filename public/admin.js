@@ -109,7 +109,7 @@ async function getmovie() {
                 <div style="justify-content:center;padding:5% 18%; width:100%;justify-self:center;background-color:green;heigh:auto;">
                     <img src="${user.client}">
                     </div>
-                    <div class="profile-info">
+                    <div style="padding: 0px 15px;" class="profile-info">
                         <h2 style="text-align:center;margin-bottom:0px;line-height:2rem;color:white;">${user.Aname.Name} ${user.Aname.Mname} ${user.Aname.Surname}</h2>  
                         <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;text-align:center;color:yellow;">>>>ID NO: ${user.pine}<<<</h1>
                     </div>
