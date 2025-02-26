@@ -36,8 +36,7 @@ router.get('/', function(req, res, next) {
   var school = JSON.parse(fs.readFileSync(schools,'utf-8'));
   //var accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
   router.get('/school', function(req, res, next) {
-    const dataa = school;
-    const data = dataa.slice(0,3)
+    const data = school;
     res.json(data)
     console.log(data)
   });
