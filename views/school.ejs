@@ -98,7 +98,6 @@ async function getData() {
 function filterData(searchTerm) {
     listItems.forEach(item => {
         if (item.innerText.toLowerCase().includes(searchTerm.toLowerCase())) {
-            item.slice(0,3)
             item.classList.remove('hide')
         } else {
             item.classList.add('hide')
