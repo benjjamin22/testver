@@ -59,7 +59,7 @@
 const search = document.getElementById('School');
 const main = document.getElementById('main');
 const form = document.getElementById('form')
-url = '/school?_limit=3'
+url = '/school'
 
 const listItems = []
 
@@ -76,7 +76,7 @@ async function getData() {
 
     data.forEach(user => {
         const div = document.createElement('div')
-        const resultlist = listItems.slice(0,3)
+        const resultlist = listItems
         resultlist.push(div)
         div.innerHTML = `<a style="text-decoration:none;" onclick="movieselected('${user.id}')"href="#">
         <div class="box">
