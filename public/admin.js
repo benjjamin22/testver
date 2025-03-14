@@ -39,7 +39,8 @@ function createProductElement(product) {
     <img src="${product.client}">
     <div class="movie-info">
   <h3>${product.Aname.Name} ${product.Aname.Mname} ${product.Aname.Surname} </h3>
-    </div></div> </a> `
+    <div style="display:none;">${product.pine}</div>
+    </div> </div>  </a> `
     return productEl;
 }
 
