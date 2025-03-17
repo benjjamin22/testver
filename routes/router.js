@@ -50,12 +50,12 @@ router.get('/', function(req, res, next) {
           var foundUser = accounts.find((data) => req.body.Password === data.pine || req.body.ParentPhoneNo === data.ParentPhoneNo);
           if (foundUser ) {
               //req.session.user = foundUser.pine;
-                  res.render('idcard',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,
+                  res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,
                       NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,
                       Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,
                       State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,
                       ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,
-                      Status:foundUser.Status,id:foundUser.id,Status:foundUser.Status,time:foundUser.time});
+                      Status:foundUser.Status,id:foundUser.id,Status:foundUser.Status,pine:foundUser.pine});
               } else {
                   res.render('ddx');
               }
@@ -65,6 +65,25 @@ router.get('/', function(req, res, next) {
           
       }
   });
+  router.post('/search', async (req,res) => {
+    try{
+        const foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name && req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
+        if (foundUser) {
+        //req.session.user = foundUser.pine;
+            //res.render('result',{id:foundUser.pine});
+            
+            res.render('myid',{id:foundUser.pine,firstname:foundUser.Aname.Name,MiddleName:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,ParentPhoneNo:foundUser.ParentPhoneNo});
+            //res.send(`<!DOCTYPE html><html><body><h1 style="font-size:6rem; margin-top:8rem;text-align: center;">${foundUser.pine}</h1>
+               // </html>`)
+        } else {
+            res.render('ddx');
+        }
+   
+} catch{
+    res.send("Internal server error");
+    
+}
+});
 
   /* GET home page. */
 router.get('/schools', function(req, res, next) {
