@@ -110,7 +110,7 @@ router.get('/schools', function(req, res, next) {
                     Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,
                     State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,
                     ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,
-                    Status:foundUser.Status,id:foundUser.id,Status:foundUser.Status,time:foundUser.time});
+                    Status:foundUser.Status,id:foundUser.id,Status:foundUser.Status,pine:foundUser.pine});
             } else {
                 res.render('ddx');
             }
