@@ -67,7 +67,7 @@ router.get('/', function(req, res, next) {
   });
   router.post('/search', async (req,res) => {
     try{
-        const foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name && req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
+        var foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name && req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
         if (foundUser) {
         //req.session.user = foundUser.pine;
             //res.render('result',{id:foundUser.pine});
