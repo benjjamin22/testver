@@ -25,7 +25,7 @@ router.get('/id', function(req, res, next) {
 
   /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
+    res.render('idslip', { title: 'Express' });
   });
 
   router.get('/sch', function(req, res, next) {
